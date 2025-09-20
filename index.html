@@ -1,318 +1,274 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OSTRANS CAMEROUN SARL - Services de location de véhicules, transport, logistique, BTP, import/export et distribution de produits pétroliers à Yaoundé, Cameroun.">
-    <meta name="keywords" content="OSTRANS, Cameroun, location véhicules, transport personnes biens, gestion logistique, BTP, import export, distribution pétrole">
-    <meta name="author" content="OSTRANS CAMEROUN SARL">
-    <title>OSTRANS CAMEROUN SARL - Direction Générale</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-color: #FF6600; /* Orange from sign */
-            --secondary-color: #FFFFFF; /* White */
-            --text-color: #000000; /* Black */
-            --background-color: #FFFFFF;
-            --accent-color: #333333;
-            --light-shade: #f0f0f0;
-        }
-
-        body.dark-mode {
-            --primary-color: #FF6600;
-            --secondary-color: #1A1A1A; /* Dark gray */
-            --text-color: #FFFFFF;
-            --background-color: #121212;
-            --accent-color: #CCCCCC;
-            --light-shade: #2a2a2a;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            transform: scale(1.1);
-        }
-
-        .mode-switch {
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        section {
-            padding: 2rem;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #hero {
-            background: linear-gradient(to right, var(--primary-color), #ff8533);
-            color: var(--secondary-color);
-            text-align: center;
-            padding: 4rem 2rem;
-            animation: fadeIn 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .services-list, .atouts-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .service-item, .atout-item {
-            background: linear-gradient(to bottom, var(--secondary-color), var(--light-shade));
-            color: var(--text-color);
-            padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            text-align: center;
-            animation: scaleIn 0.5s ease-in-out forwards;
-        }
-
-        .service-item:hover, .atout-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .service-item i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .service-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover img {
-            transform: scale(1.05);
-        }
-
-        #contact {
-            text-align: center;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        /* Responsive design */
-        @media (max-width: 365px) {
-            body {
-                font-size: 0.9rem;
-            }
-            header {
-                flex-direction: column;
-            }
-            nav ul {
-                flex-direction: column;
-            }
-        }
-
-        @media (min-width: 365px) and (max-width: 768px) {
-            .services-list, .atouts-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* SEO improvements: semantic elements used */
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OSTRANS CAMEROUN SARL - Services de transport, logistique, BTP, import/export et distribution pétrolière au Cameroun.">
+  <title>OSTRANS CAMEROUN SARL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #FF6600;
+      --dark: #121212;
+      --light: #fff;
+      --gray: #f0f0f0;
+      --text-dark: #000;
+      --text-light: #fff;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+    }
+    body.dark-mode {
+      background: var(--dark);
+      color: var(--text-light);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 1rem;
+    }
+    nav ul li a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .mode-switch {
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    #hero {
+      text-align: center;
+      background: linear-gradient(to right, var(--primary), #ff8533);
+      color: var(--light);
+      padding: 4rem 2rem;
+      border-radius: 0 0 20px 20px;
+    }
+    #hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    #hero button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--light);
+      color: var(--primary);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    #hero button:hover {
+      transform: scale(1.05);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--gray);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3, .card p {
+      padding: 0.8rem;
+      margin: 0;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .highlight img {
+      flex: 1;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+    .highlight .text {
+      flex: 2;
+    }
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--light);
+      margin: 0 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .highlight {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 365px) {
+      body { font-size: 0.9rem; }
+      header { flex-direction: column; }
+      nav ul { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">OSTRANS CAMEROUN SARL</div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Accueil</a></li>
-                <li><a href="#services">Nos Services</a></li>
-                <li><a href="#atouts">Nos Atouts</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <i class="fas fa-sun mode-switch" id="mode-switch"></i>
-    </header>
+  <header>
+    <div class="logo">OSTRANS</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#stories">Actualités</a></li>
+        <li><a href="#highlight">Témoignages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <i class="fas fa-sun mode-switch" id="mode-switch"></i>
+  </header>
 
-    <section id="hero">
-        <h1>Direction Générale - Head Office</h1>
-        <p>Bienvenue chez OSTRANS CAMEROUN SARL, votre partenaire en transport et logistique au Cameroun.</p>
-    </section>
+  <section id="hero">
+    <h1>Découvrez la puissance du transport et de la logistique au Cameroun</h1>
+    <p>OSTRANS CAMEROUN SARL vous accompagne avec des solutions fiables en transport, BTP, import/export et distribution pétrolière. Nous transformons vos défis en réussites.</p>
+    <button>Planifiez avec nous</button>
+  </section>
 
-    <section id="services">
-        <h2>Nos Services / Our Services</h2>
-        <div class="services-list">
-            <div class="service-item">
-                <i class="fas fa-car"></i>
-                <h3>Location véhicules / Bus & vehicle rental</h3>
-                <p>Nous proposons une large gamme de véhicules à louer, incluant des bus, voitures et camions pour des besoins personnels ou professionnels. Nos options flexibles incluent des locations à court ou long terme, avec maintenance incluse pour assurer votre sécurité et confort. / We offer a wide range of vehicles for rent, including buses, cars, and trucks for personal or business needs. Our flexible options include short or long-term rentals, with maintenance included to ensure your safety and comfort.</p>
-                <img src="https://images.pexels.com/photos/3764987/pexels-photo-3764987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Location de véhicules">
-            </div>
-            <div class="service-item">
-                <i class="fas fa-bus"></i>
-                <h3>Transport des personnes et des biens / Transport of people and goods</h3>
-                <p>Nos services de transport assurent le déplacement sécurisé des personnes et des marchandises à travers le Cameroun. Avec une flotte moderne et des chauffeurs expérimentés, nous garantissons des livraisons ponctuelles et fiables. / Our transport services ensure the safe movement of people and goods across Cameroon. With a modern fleet and experienced drivers, we guarantee timely and reliable deliveries.</p>
-                <img src="https://images.pexels.com/photos/440665/pexels-photo-440665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Transport des personnes et des biens">
-            </div>
-            <div class="service-item">
-                <i class="fas fa-truck"></i>
-                <h3>Gestion logistique / Logistics Management</h3>
-                <p>Nous gérons l'ensemble de votre chaîne logistique, de l'entreposage à la distribution, en optimisant les coûts et les délais. Nos solutions personnalisées intègrent des technologies avancées pour un suivi en temps réel. / We manage your entire logistics chain, from warehousing to distribution, optimizing costs and timelines. Our customized solutions integrate advanced technologies for real-time tracking.</p>
-                <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gestion logistique">
-            </div>
-            <div class="service-item">
-                <i class="fas fa-hard-hat"></i>
-                <h3>Bâtiment et travaux publics (BTP) / Building and public works</h3>
-                <p>Spécialisés dans les projets de construction et d'infrastructures publiques, nous offrons des services complets allant de la conception à la réalisation, en respectant les normes de qualité et de sécurité. / Specialized in construction and public infrastructure projects, we offer complete services from design to execution, adhering to quality and safety standards.</p>
-                <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Bâtiment et travaux publics">
-            </div>
-            <div class="service-item">
-                <i class="fas fa-ship"></i>
-                <h3>Import / Export</h3>
-                <p>Nous facilitons vos opérations d'import et d'export avec une expertise en douanes et logistique internationale, assurant un transit fluide des marchandises vers et depuis le Cameroun. / We facilitate your import and export operations with expertise in customs and international logistics, ensuring smooth transit of goods to and from Cameroon.</p>
-                <img src="https://images.pexels.com/photos/1697912/pexels-photo-1697912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Import / Export">
-            </div>
-            <div class="service-item">
-                <i class="fas fa-gas-pump"></i>
-                <h3>Distribution des produits pétroliers / Distribution of petroleum products</h3>
-                <p>Nous distribuons une variété de produits pétroliers, incluant carburants et lubrifiants, avec un réseau étendu pour une fourniture fiable aux entreprises et particuliers. / We distribute a variety of petroleum products, including fuels and lubricants, with an extensive network for reliable supply to businesses and individuals.</p>
-                <img src="https://images.pexels.com/photos/18686325/pexels-photo-18686325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Distribution des produits pétroliers">
-            </div>
-        </div>
-    </section>
+  <section id="services">
+    <h2>Nos Services</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3764987/pexels-photo-3764987.jpeg" alt="Location véhicules">
+        <h3>Location de véhicules</h3>
+        <p>Bus, voitures et camions disponibles pour vos besoins.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/440665/pexels-photo-440665.jpeg" alt="Transport des personnes">
+        <h3>Transport de personnes et biens</h3>
+        <p>Sécurité et ponctualité garanties dans tout le Cameroun.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg" alt="Logistique">
+        <h3>Gestion logistique</h3>
+        <p>Des solutions personnalisées et un suivi en temps réel.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="BTP">
+        <h3>BTP</h3>
+        <p>Construction et infrastructures publiques aux normes.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1697912/pexels-photo-1697912.jpeg" alt="Import export">
+        <h3>Import / Export</h3>
+        <p>Transit fluide de marchandises via nos experts douaniers.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/18686325/pexels-photo-18686325.jpeg" alt="Produits pétroliers">
+        <h3>Produits pétroliers</h3>
+        <p>Distribution fiable de carburants et lubrifiants.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="atouts">
-        <h2>Nos Atouts</h2>
-        <div class="atouts-list">
-            <div class="atout-item">
-                <i class="fas fa-check"></i> Polyvalence et diversification
-            </div>
-            <div class="atout-item">
-                <i class="fas fa-check"></i> Expertise et maîtrise des réglementations
-            </div>
-            <div class="atout-item">
-                <i class="fas fa-check"></i> Capacité logistique et infrastructures solides
-            </div>
-            <div class="atout-item">
-                <i class="fas fa-check"></i> Compétitivité sur le marché
-            </div>
-            <div class="atout-item">
-                <i class="fas fa-check"></i> Image de marque et fiabilité
-            </div>
-            <div class="atout-item">
-                <i class="fas fa-check"></i> Service client réactif
-            </div>
-        </div>
-    </section>
+  <section id="stories">
+    <h2>Actualités Récentes</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1405924/pexels-photo-1405924.jpeg" alt="Camion OSTRANS">
+        <h3>Renforcement de notre flotte</h3>
+        <p>De nouveaux camions modernes pour améliorer nos livraisons.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg" alt="Travaux publics">
+        <h3>Nouveau chantier BTP</h3>
+        <p>OSTRANS contribue à un projet routier majeur à Yaoundé.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1437493/pexels-photo-1437493.jpeg" alt="Carburant">
+        <h3>Sécurité pétrolière</h3>
+        <p>Nos nouvelles normes garantissent une distribution fiable.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><i class="fas fa-phone"></i> +237 670 24 37 67 / 690 61 41 13</p>
-        <p><i class="fas fa-map-marker-alt"></i> B.P. 4640 Yaoundé</p>
-        <p><i class="fas fa-envelope"></i> ostranscameroun@gmail.com</p>
-        <p><i class="fas fa-globe"></i> www.ostrans.cm</p>
-        <p><i class="fab fa-facebook"></i> Ostranscameroun</p>
-        <h3>Ouverture 7 Jours sur 7</h3>
-        <p>Lundi à Vendredi : 08h - 17h30</p>
-        <p>Weekend et Jours Fériés : 09h30 - 15h30</p>
-    </section>
+  <section id="highlight">
+    <h2>Témoignages</h2>
+    <div class="highlight">
+      <img src="https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg" alt="Client heureux">
+      <div class="text">
+        <h3>Maria Angélica, Entrepreneure</h3>
+        <p>"Grâce à OSTRANS, mon entreprise reçoit toujours ses produits à temps. Leur fiabilité et leur professionnalisme font toute la différence."</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 OSTRANS CAMEROUN SARL. Tous droits réservés.</p>
-    </footer>
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <p><i class="fas fa-phone"></i> +237 670 24 37 67 / 690 61 41 13</p>
+    <p><i class="fas fa-envelope"></i> ostranscameroun@gmail.com</p>
+    <p><i class="fas fa-map-marker-alt"></i> B.P. 4640 Yaoundé</p>
+  </section>
 
-    <script>
-        const modeSwitch = document.getElementById('mode-switch');
-        modeSwitch.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                modeSwitch.classList.remove('fa-sun');
-                modeSwitch.classList.add('fa-moon');
-            } else {
-                modeSwitch.classList.remove('fa-moon');
-                modeSwitch.classList.add('fa-sun');
-            }
-        });
+  <footer>
+    <p>&copy; 2025 OSTRANS CAMEROUN SARL. Tous droits réservés.</p>
+    <p>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </p>
+  </footer>
 
-        // Animations on scroll
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+  <script>
+    const modeSwitch = document.getElementById('mode-switch');
+    modeSwitch.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        modeSwitch.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        modeSwitch.classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+  </script>
 </body>
 </html>
