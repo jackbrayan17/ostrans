@@ -15,6 +15,7 @@
             --text-color: #000000; /* Black */
             --background-color: #FFFFFF;
             --accent-color: #333333;
+            --light-shade: #f0f0f0;
         }
 
         body.dark-mode {
@@ -23,6 +24,7 @@
             --text-color: #FFFFFF;
             --background-color: #121212;
             --accent-color: #CCCCCC;
+            --light-shade: #2a2a2a;
         }
 
         body {
@@ -91,16 +93,23 @@
         }
 
         #hero {
-            background-color: var(--primary-color);
+            background: linear-gradient(to right, var(--primary-color), #ff8533);
             color: var(--secondary-color);
             text-align: center;
             padding: 4rem 2rem;
             animation: fadeIn 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .services-list, .atouts-list {
@@ -110,13 +119,14 @@
         }
 
         .service-item, .atout-item {
-            background-color: var(--secondary-color);
+            background: linear-gradient(to bottom, var(--secondary-color), var(--light-shade));
             color: var(--text-color);
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             text-align: center;
+            animation: scaleIn 0.5s ease-in-out forwards;
         }
 
         .service-item:hover, .atout-item:hover {
@@ -135,6 +145,11 @@
             height: auto;
             border-radius: 8px;
             margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover img {
+            transform: scale(1.05);
         }
 
         #contact {
@@ -215,19 +230,19 @@
                 <i class="fas fa-hard-hat"></i>
                 <h3>Bâtiment et travaux publics (BTP) / Building and public works</h3>
                 <p>Spécialisés dans les projets de construction et d'infrastructures publiques, nous offrons des services complets allant de la conception à la réalisation, en respectant les normes de qualité et de sécurité. / Specialized in construction and public infrastructure projects, we offer complete services from design to execution, adhering to quality and safety standards.</p>
-                <img src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Bâtiment et travaux publics">
+                <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Bâtiment et travaux publics">
             </div>
             <div class="service-item">
                 <i class="fas fa-ship"></i>
                 <h3>Import / Export</h3>
                 <p>Nous facilitons vos opérations d'import et d'export avec une expertise en douanes et logistique internationale, assurant un transit fluide des marchandises vers et depuis le Cameroun. / We facilitate your import and export operations with expertise in customs and international logistics, ensuring smooth transit of goods to and from Cameroon.</p>
-                <img src="https://images.pexels.com/photos/1288672/pexels-photo-1288672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Import / Export">
+                <img src="https://images.pexels.com/photos/1697912/pexels-photo-1697912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Import / Export">
             </div>
             <div class="service-item">
                 <i class="fas fa-gas-pump"></i>
                 <h3>Distribution des produits pétroliers / Distribution of petroleum products</h3>
                 <p>Nous distribuons une variété de produits pétroliers, incluant carburants et lubrifiants, avec un réseau étendu pour une fourniture fiable aux entreprises et particuliers. / We distribute a variety of petroleum products, including fuels and lubricants, with an extensive network for reliable supply to businesses and individuals.</p>
-                <img src="https://images.pexels.com/photos/2416652/pexels-photo-2416652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Distribution des produits pétroliers">
+                <img src="https://images.pexels.com/photos/18686325/pexels-photo-18686325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Distribution des produits pétroliers">
             </div>
         </div>
     </section>
