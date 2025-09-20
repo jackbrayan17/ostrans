@@ -244,19 +244,56 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><i class="fas fa-phone"></i> +237 670 24 37 67 / 690 61 41 13</p>
-    <p><i class="fas fa-envelope"></i> ostranscameroun@gmail.com</p>
-    <p><i class="fas fa-map-marker-alt"></i> B.P. 4640 Yaoundé</p>
+ <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous</h2>
+      <div class="max-w-2xl mx-auto">
+        <form id="contactForm" class="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
+          <div>
+            <label class="block font-bold mb-2">Nom</label>
+            <input type="text" id="name" class="w-full border rounded-lg p-3" required>
+          </div>
+          <div>
+            <label class="block font-bold mb-2">Email</label>
+            <input type="email" id="email" class="w-full border rounded-lg p-3" required>
+          </div>
+          <div>
+            <label class="block font-bold mb-2">Message</label>
+            <textarea id="message" class="w-full border rounded-lg p-3" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-600 transition">
+            Envoyer sur WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 OSTRANS CAMEROUN SARL. Tous droits réservés.</p>
-    <p>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </p>
+   <footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-xl mb-4">OSTRANS</h3>
+        <p>Transport, logistique et BTP au service de l’Afrique.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-xl mb-4">Contact</h3>
+        <p><i class="fas fa-phone mr-2"></i>+237 6 89 23 02 75</p>
+        <p><i class="fas fa-envelope mr-2"></i>contact@ostrans.com</p>
+        <p><i class="fas fa-map-marker-alt mr-2"></i>Yaoundé, Cameroun</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-xl mb-4">Suivez-nous</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-yellow-500"><i class="fab fa-facebook text-2xl"></i></a>
+          <a href="#" class="hover:text-yellow-500"><i class="fab fa-linkedin text-2xl"></i></a>
+          <a href="#" class="hover:text-yellow-500"><i class="fab fa-twitter text-2xl"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-gray-400 text-sm">
+      © 2025 OSTRANS. Tous droits réservés.
+    </div>
   </footer>
 
   <script>
@@ -268,6 +305,17 @@
       } else {
         modeSwitch.classList.replace('fa-moon', 'fa-sun');
       }
+    });
+     document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+
+      let phone = "237694103585"; // Ton numéro WhatsApp sans +
+      let text = `Bonjour OSTRANS, je suis ${name} (${email}).\n${message}`;
+      let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
     });
   </script>
 </body>
