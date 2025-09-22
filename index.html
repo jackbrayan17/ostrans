@@ -4,28 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="OSTRANS CAMEROUN SARL - Services de transport, logistique, BTP, import/export et distribution pétrolière au Cameroun.">
-  <title>OSTRANS CAMEROUN SARL</title>
+  <meta name="keywords" content="transport Cameroun, logistique, BTP, import export, distribution pétrolière, location véhicules">
+  <meta name="author" content="OSTRANS CAMEROUN SARL">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ostrans-cameroun.com/">
+  <meta property="og:title" content="OSTRANS CAMEROUN SARL - Transport et Logistique">
+  <meta property="og:description" content="Services de transport, logistique, BTP, import/export et distribution pétrolière au Cameroun.">
+  <meta property="og:image" content="https://ostrans-cameroun.com/images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ostrans-cameroun.com/">
+  <meta property="twitter:title" content="OSTRANS CAMEROUN SARL - Transport et Logistique">
+  <meta property="twitter:description" content="Services de transport, logistique, BTP, import/export et distribution pétrolière au Cameroun.">
+  <meta property="twitter:image" content="https://ostrans-cameroun.com/images/twitter-image.jpg">
+  
+  <link rel="canonical" href="https://ostrans-cameroun.com/">
+  
+  <title>OSTRANS CAMEROUN SARL - Transport, Logistique et BTP au Cameroun</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #FF6600;
+      --primary-dark: #e55a00;
+      --primary-light: #ff8533;
+      --secondary: #0066cc;
       --dark: #121212;
+      --dark-light: #1e1e1e;
       --light: #fff;
       --gray: #f0f0f0;
+      --gray-dark: #e0e0e0;
       --text-dark: #000;
       --text-light: #fff;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --border-radius: 12px;
     }
-    body {
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
       background: var(--light);
       color: var(--text-dark);
-      transition: all 0.3s ease;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: var(--transition);
     }
+
     body.dark-mode {
       background: var(--dark);
       color: var(--text-light);
     }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header amélioré */
     header {
       display: flex;
       justify-content: space-between;
@@ -36,293 +96,1152 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
     }
+
+    header.scrolled {
+      padding: 0.7rem 2rem;
+      background: var(--primary-dark);
+    }
+
     header .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      z-index: 1001;
     }
+
+    header .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav ul {
       display: flex;
       list-style: none;
       margin: 0;
       padding: 0;
     }
+
     nav ul li {
-      margin-left: 1rem;
+      margin-left: 1.5rem;
+      position: relative;
     }
+
     nav ul li a {
       color: var(--light);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
     }
+
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--light);
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+      transition: var(--transition);
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-toggle:hover {
+      transform: scale(1.1);
+    }
+
     .mode-switch {
       cursor: pointer;
       font-size: 1.2rem;
-      margin-left: 1rem;
+      margin-left: 1.5rem;
+      transition: var(--transition);
     }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: auto;
+
+    .mode-switch:hover {
+      transform: rotate(30deg);
     }
+
+    /* Hero Section */
     #hero {
       text-align: center;
-      background: linear-gradient(to right, var(--primary), #ff8533);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--light);
-      padding: 4rem 2rem;
-      border-radius: 0 0 20px 20px;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
     }
+
+    #hero:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,160C960,139,1056,149,1152,165.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center bottom;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
     #hero h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 1s ease;
     }
+
     #hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: auto;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease 0.3s both;
     }
-    #hero button {
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
       background: var(--light);
       color: var(--primary);
       border: none;
-      border-radius: 30px;
+      border-radius: 50px;
       cursor: pointer;
       font-weight: bold;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      animation: fadeIn 1s ease 0.6s both;
+      position: relative;
+      overflow: hidden;
     }
-    #hero button:hover {
-      transform: scale(1.05);
+
+    .btn:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
     }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn:hover:after {
+      left: 100%;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--light);
+      border: 2px solid var(--light);
+    }
+
+    /* Sections communes */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .dark-mode .section-title:after {
+      background: var(--primary-light);
+    }
+
+    /* Grid & Cards */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
+
     .card {
-      background: var(--gray);
-      border-radius: 12px;
+      background: var(--light);
+      border-radius: var(--border-radius);
       overflow: hidden;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
     }
-    .card img {
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
+      transition: var(--transition);
     }
-    .card h3, .card p {
-      padding: 0.8rem;
-      margin: 0;
+
+    .card-content {
+      padding: 1.5rem;
     }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .dark-mode .card h3 {
+      color: var(--primary-light);
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .dark-mode .card p {
+      color: var(--text-light);
+    }
+
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
     }
+
+    .card:hover .card-img {
+      transform: scale(1.05);
+    }
+
+    /* Highlight/Témoignages amélioré */
+    .testimonials-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .highlight {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       align-items: center;
+      background: var(--gray);
+      padding: 2.5rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
     }
+
+    .dark-mode .highlight {
+      background: var(--dark-light);
+    }
+
     .highlight img {
       flex: 1;
-      max-width: 400px;
-      border-radius: 12px;
+      min-width: 250px;
+      max-width: 350px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      height: 250px;
+      object-fit: cover;
     }
+
     .highlight .text {
       flex: 2;
+      min-width: 300px;
     }
-    footer {
-      background: var(--primary);
-      color: var(--light);
+
+    .highlight .text h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .dark-mode .highlight .text h3 {
+      color: var(--primary-light);
+    }
+
+    /* Contact Section */
+    #contact {
+      background: linear-gradient(to right, var(--gray), var(--light));
+      padding: 5rem 0;
+      transition: var(--transition);
+    }
+
+    .dark-mode #contact {
+      background: linear-gradient(to right, var(--dark-light), var(--dark));
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--light);
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .dark-mode .contact-container {
+      background: var(--dark-light);
+    }
+
+    .contact-title {
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      margin-bottom: 1.5rem;
     }
-    footer a {
-      color: var(--light);
-      margin: 0 0.5rem;
+
+    .contact-desc {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--text-dark);
     }
-    @media (max-width: 768px) {
-      .highlight {
-        flex-direction: column;
+
+    .dark-mode .contact-desc {
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .dark-mode .form-group label {
+      color: var(--text-light);
+    }
+
+    .form-group i {
+      position: absolute;
+      left: 15px;
+      top: 40px;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      border: 1px solid var(--gray-dark);
+      border-radius: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .dark-mode .form-control {
+      background: var(--dark);
+      border-color: #444;
+      color: var(--text-light);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-whatsapp i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--text-light);
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .footer-col p {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-col i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-5px);
+    }
+
+    /* Overlay pour menu mobile */
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Animations améliorées */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-    @media (max-width: 365px) {
-      body { font-size: 0.9rem; }
-      header { flex-direction: column; }
-      nav ul { flex-direction: column; }
+
+    @keyframes fadeInDown {
+      from { 
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from { 
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to { 
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideOutRight {
+      from { 
+        opacity: 1;
+        transform: translateX(0);
+      }
+      to { 
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+
+    /* Responsive Design améliorée */
+    @media (max-width: 992px) {
+      #hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .highlight {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .highlight img {
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      
+      header.scrolled {
+        padding: 0.7rem 1rem;
+      }
+      
+      .nav-toggle {
+        display: flex;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 5rem 1.5rem 2rem;
+        transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 999;
+        overflow-y: auto;
+      }
+      
+      nav ul.active {
+        right: 0;
+        animation: slideInRight 0.4s forwards;
+      }
+      
+      nav ul.closing {
+        animation: slideOutRight 0.4s forwards;
+      }
+      
+      nav ul li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: left;
+      }
+      
+      nav ul li a {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .mode-switch {
+        position: static;
+        margin: 1.5rem 0 0;
+        font-size: 1.5rem;
+        display: inline-block;
+      }
+      
+      #hero {
+        padding: 4rem 1rem;
+      }
+      
+      #hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      #hero p {
+        font-size: 1rem;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      .contact-container {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .highlight {
+        padding: 1.5rem;
+        gap: 1.5rem;
+      }
+      
+      .highlight .text {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 0 0.5rem;
+      }
+      
+      #hero h1 {
+        font-size: 1.6rem;
+      }
+      
+      #hero p {
+        font-size: 0.95rem;
+      }
+      
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .card {
+        margin-bottom: 1.5rem;
+      }
+      
+      .contact-container {
+        padding: 1.5rem;
+      }
+      
+      .highlight {
+        padding: 1.5rem 1rem;
+      }
+      
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+      
+      nav ul {
+        width: 85%;
+        padding: 5rem 1rem 2rem;
+      }
+      
+      .highlight img {
+        height: 200px;
+      }
+    }
+
+    /* Animation pour les sections au scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">OSTRANS</div>
+    <button class="nav-toggle" aria-label="toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav>
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#stories">Actualités</a></li>
         <li><a href="#highlight">Témoignages</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><i class="fas fa-sun mode-switch" id="mode-switch"></i></li>
       </ul>
     </nav>
-    <i class="fas fa-sun mode-switch" id="mode-switch"></i>
+    <div class="nav-overlay"></div>
   </header>
 
   <section id="hero">
-    <h1>Découvrez la puissance du transport et de la logistique au Cameroun</h1>
-    <p>OSTRANS CAMEROUN SARL vous accompagne avec des solutions fiables en transport, BTP, import/export et distribution pétrolière. Nous transformons vos défis en réussites.</p>
-    <button>Planifiez avec nous</button>
-  </section>
-
-  <section id="services">
-    <h2>Nos Services</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.pexels.com/photos/3764987/pexels-photo-3764987.jpeg" alt="Location véhicules">
-        <h3>Location de véhicules</h3>
-        <p>Bus, voitures et camions disponibles pour vos besoins.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/440665/pexels-photo-440665.jpeg" alt="Transport des personnes">
-        <h3>Transport de personnes et biens</h3>
-        <p>Sécurité et ponctualité garanties dans tout le Cameroun.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg" alt="Logistique">
-        <h3>Gestion logistique</h3>
-        <p>Des solutions personnalisées et un suivi en temps réel.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="BTP">
-        <h3>BTP</h3>
-        <p>Construction et infrastructures publiques aux normes.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/1697912/pexels-photo-1697912.jpeg" alt="Import export">
-        <h3>Import / Export</h3>
-        <p>Transit fluide de marchandises via nos experts douaniers.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/18686325/pexels-photo-18686325.jpeg" alt="Produits pétroliers">
-        <h3>Produits pétroliers</h3>
-        <p>Distribution fiable de carburants et lubrifiants.</p>
-      </div>
+    <div class="hero-content">
+      <h1>Découvrez la puissance du transport et de la logistique au Cameroun</h1>
+      <p>OSTRANS CAMEROUN SARL vous accompagne avec des solutions fiables en transport, BTP, import/export et distribution pétrolière. Nous transformons vos défis en réussites.</p>
+      <a href="#contact" class="btn">Planifiez avec nous</a>
     </div>
   </section>
 
-  <section id="stories">
-    <h2>Actualités Récentes</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.pexels.com/photos/1405924/pexels-photo-1405924.jpeg" alt="Camion OSTRANS">
-        <h3>Renforcement de notre flotte</h3>
-        <p>De nouveaux camions modernes pour améliorer nos livraisons.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg" alt="Travaux publics">
-        <h3>Nouveau chantier BTP</h3>
-        <p>OSTRANS contribue à un projet routier majeur à Yaoundé.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/1437493/pexels-photo-1437493.jpeg" alt="Carburant">
-        <h3>Sécurité pétrolière</h3>
-        <p>Nos nouvelles normes garantissent une distribution fiable.</p>
+  <section id="services" class="fade-in">
+    <div class="container">
+      <h2 class="section-title">Nos Services</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.pexels.com/photos/3764987/pexels-photo-3764987.jpeg" alt="Location véhicules" class="card-img">
+          <div class="card-content">
+            <h3>Location de véhicules</h3>
+            <p>Bus, voitures et camions disponibles pour vos besoins.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/440665/pexels-photo-440665.jpeg" alt="Transport des personnes" class="card-img">
+          <div class="card-content">
+            <h3>Transport de personnes et biens</h3>
+            <p>Sécurité et ponctualité garanties dans tout le Cameroun.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg" alt="Logistique" class="card-img">
+          <div class="card-content">
+            <h3>Gestion logistique</h3>
+            <p>Des solutions personnalisées et un suivi en temps réel.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="BTP" class="card-img">
+          <div class="card-content">
+            <h3>BTP</h3>
+            <p>Construction et infrastructures publiques aux normes.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1697912/pexels-photo-1697912.jpeg" alt="Import export" class="card-img">
+          <div class="card-content">
+            <h3>Import / Export</h3>
+            <p>Transit fluide de marchandises via nos experts douaniers.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/18686325/pexels-photo-18686325.jpeg" alt="Produits pétroliers" class="card-img">
+          <div class="card-content">
+            <h3>Produits pétroliers</h3>
+            <p>Distribution fiable de carburants et lubrifiants.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="highlight">
-    <h2>Témoignages</h2>
-    <div class="highlight">
-      <img src="https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg" alt="Client heureux">
-      <div class="text">
-        <h3>Maria Angélica, Entrepreneure</h3>
-        <p>"Grâce à OSTRANS, mon entreprise reçoit toujours ses produits à temps. Leur fiabilité et leur professionnalisme font toute la différence."</p>
+  <section id="stories" class="fade-in">
+    <div class="container">
+      <h2 class="section-title">Actualités Récentes</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1405924/pexels-photo-1405924.jpeg" alt="Camion OSTRANS" class="card-img">
+          <div class="card-content">
+            <h3>Renforcement de notre flotte</h3>
+            <p>De nouveaux camions modernes pour améliorer nos livraisons.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg" alt="Travaux publics" class="card-img">
+          <div class="card-content">
+            <h3>Nouveau chantier BTP</h3>
+            <p>OSTRANS contribue à un projet routier majeur à Yaoundé.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1437493/pexels-photo-1437493.jpeg" alt="Carburant" class="card-img">
+          <div class="card-content">
+            <h3>Sécurité pétrolière</h3>
+            <p>Nos nouvelles normes garantissent une distribution fiable.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- Contact -->
-<section id="contact" class="py-20 bg-gradient-to-r from-gray-100 via-white to-gray-100">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-extrabold text-center mb-4 text-gray-800">Restons en Contact</h2>
-    <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-      Une question, un projet ou une collaboration ? Envoyez-nous un message directement via WhatsApp.
-    </p>
-    <div class="max-w-2xl mx-auto">
-      <form id="contactForm" class="space-y-6 bg-white p-10 rounded-2xl shadow-2xl border border-gray-200">
-        <div class="relative">
-          <label class="block font-semibold mb-2 text-gray-700">Nom</label>
-          <span class="absolute top-10 left-3 text-gray-400"><i class="fas fa-user"></i></span>
-          <input type="text" id="name" class="w-full border rounded-lg p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" placeholder="Votre nom" required>
+  <section id="highlight" class="fade-in">
+    <div class="container">
+      <h2 class="section-title">Témoignages</h2>
+      <div class="testimonials-container">
+        <div class="highlight">
+          <img src="https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg" alt="Client heureux">
+          <div class="text">
+            <h3>Maria Angélica, Entrepreneure</h3>
+            <p>"Grâce à OSTRANS, mon entreprise reçoit toujours ses produits à temps. Leur fiabilité et leur professionnalisme font toute la différence."</p>
+          </div>
         </div>
-        <div class="relative">
-          <label class="block font-semibold mb-2 text-gray-700">Email</label>
-          <span class="absolute top-10 left-3 text-gray-400"><i class="fas fa-envelope"></i></span>
-          <input type="email" id="email" class="w-full border rounded-lg p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" placeholder="exemple@mail.com" required>
-        </div>
-        <div class="relative">
-          <label class="block font-semibold mb-2 text-gray-700">Message</label>
-          <span class="absolute top-10 left-3 text-gray-400"><i class="fas fa-comment"></i></span>
-          <textarea id="message" class="w-full border rounded-lg p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" rows="4" placeholder="Votre message..." required></textarea>
-        </div>
-        <button type="submit" class="w-full bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold shadow-md hover:bg-yellow-600 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-          <i class="fab fa-whatsapp mr-2"></i> Envoyer sur WhatsApp
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-   <footer class="bg-gray-900 text-white py-10">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="font-bold text-xl mb-4">OSTRANS</h3>
-        <p>Transport, logistique et BTP au service de l’Afrique.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl mb-4">Contact</h3>
-        <p><i class="fas fa-phone mr-2"></i>+237 6 89 23 02 75</p>
-        <p><i class="fas fa-envelope mr-2"></i>contact@ostrans.com</p>
-        <p><i class="fas fa-map-marker-alt mr-2"></i>Yaoundé, Cameroun</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl mb-4">Suivez-nous</h3>
-        <div class="flex space-x-4">
-          <a href="#" class="hover:text-yellow-500"><i class="fab fa-facebook text-2xl"></i></a>
-          <a href="#" class="hover:text-yellow-500"><i class="fab fa-linkedin text-2xl"></i></a>
-          <a href="#" class="hover:text-yellow-500"><i class="fab fa-twitter text-2xl"></i></a>
+        <div class="highlight">
+          <img src="https://images.pexels.com/photos/3764578/pexels-photo-3764578.jpeg" alt="Client satisfait">
+          <div class="text">
+            <h3>Jean-Paul Mbarga, Directeur d'entreprise</h3>
+            <p>"Le service de location de véhicules d'OSTRANS est impeccable. Leurs chauffeurs sont ponctuels et professionnels."</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="text-center mt-8 text-gray-400 text-sm">
-      © 2025 OSTRANS. Tous droits réservés.
+  </section>
+
+  <section id="contact" class="fade-in">
+    <div class="container">
+      <div class="contact-container">
+        <h2 class="contact-title">Restons en Contact</h2>
+        <p class="contact-desc">
+          Une question, un projet ou une collaboration ? Envoyez-nous un message directement via WhatsApp.
+        </p>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <i class="fas fa-user"></i>
+            <input type="text" id="name" class="form-control" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" class="form-control" placeholder="exemple@mail.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <i class="fas fa-comment"></i>
+            <textarea id="message" class="form-control" rows="4" placeholder="Votre message..." required></textarea>
+          </div>
+          <button type="submit" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>OSTRANS</h3>
+          <p>Transport, logistique et BTP au service de l'Afrique.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p><i class="fas fa-phone"></i>+237 6 89 23 02 75</p>
+          <p><i class="fas fa-envelope"></i>contact@ostrans.com</p>
+          <p><i class="fas fa-map-marker-alt"></i>Yaoundé, Cameroun</p>
+        </div>
+        <div class="footer-col">
+          <h3>Suivez-nous</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 OSTRANS. Tous droits réservés.</p>
+      </div>
     </div>
   </footer>
 
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
   <script>
+    // Mode sombre/clair
     const modeSwitch = document.getElementById('mode-switch');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Vérifier le mode système au chargement
+    if (prefersDarkScheme.matches) {
+      document.body.classList.add('dark-mode');
+      modeSwitch.classList.replace('fa-sun', 'fa-moon');
+    }
+    
     modeSwitch.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       if (document.body.classList.contains('dark-mode')) {
         modeSwitch.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'dark');
       } else {
         modeSwitch.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'light');
       }
     });
-     document.getElementById("contactForm").addEventListener("submit", function(e) {
+    
+    // Vérifier le thème sauvegardé
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      modeSwitch.classList.replace('fa-sun', 'fa-moon');
+    } else if (savedTheme === 'light') {
+      document.body.classList.remove('dark-mode');
+      modeSwitch.classList.replace('fa-moon', 'fa-sun');
+    }
+    
+    // Navigation mobile améliorée
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav ul');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    function openNav() {
+      nav.classList.remove('closing');
+      nav.classList.add('active');
+      navOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeNav() {
+      nav.classList.add('closing');
+      navOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      setTimeout(() => {
+        nav.classList.remove('active');
+        nav.classList.remove('closing');
+      }, 400);
+    }
+    
+    navToggle.addEventListener('click', () => {
+      if (nav.classList.contains('active')) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+    
+    navOverlay.addEventListener('click', closeNav);
+    
+    // Fermer le menu en cliquant sur un lien
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Animation au scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInOnScroll = () => {
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+    
+    // Animation des cartes
+    const cards = document.querySelectorAll('.card');
+    
+    const animateCards = () => {
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, index * 200);
+      });
+    };
+    
+    // Observer pour l'animation des cartes
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCards();
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.grid').forEach(grid => {
+      cardObserver.observe(grid);
+    });
+    
+    // Formulaire de contact
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      let name = document.getElementById("name").value;
-      let email = document.getElementById("email").value;
-      let message = document.getElementById("message").value;
-
-      let phone = "237694103585"; // Ton numéro WhatsApp sans +
-      let text = `Bonjour OSTRANS, je suis ${name} (${email}).\n${message}`;
-      let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank");
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      const whatsappMessage = `Bonjour OSTRANS, je suis ${name} (${email}). ${message}`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappUrl = `https://wa.me/237689230275?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, '_blank');
+      
+      // Réinitialiser le formulaire
+      contactForm.reset();
+      
+      // Afficher un message de confirmation
+      alert('Merci pour votre message! Vous allez être redirigé vers WhatsApp.');
+    });
+    
+    // Amélioration de l'accessibilité
+    document.addEventListener('keydown', (e) => {
+      // Fermer le menu avec la touche Échap
+      if (e.key === 'Escape' && nav.classList.contains('active')) {
+        closeNav();
+      }
     });
   </script>
 </body>
